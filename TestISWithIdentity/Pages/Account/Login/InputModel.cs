@@ -8,10 +8,12 @@ namespace TestISWithIdentity.Pages.Login
 {
     public class InputModel
     {
-        [Required]
+        [Display(Name = "Имя пользователя")]
+        [Required(ErrorMessage = "Введите имя пользователя")]
         public string Username { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Введите пароль")]
+        [Display(Name = "Пароль")]
         public string Password { get; set; }
 
         public bool RememberLogin { get; set; }
