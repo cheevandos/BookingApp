@@ -7,7 +7,7 @@ namespace OrgStructureMicroservice.Profiles
 {
     public class ServiceProfile : Profile
     {
-        public ServiceProfile(GlobalOptions globalOptions)
+        public ServiceProfile()
         {
             CreateMap<Service, ServiceReadDto>()
                 .ForMember(
@@ -21,7 +21,7 @@ namespace OrgStructureMicroservice.Profiles
                 .ForMember(
                     dest => dest.Duration,
                     options => options
-                        .MapFrom(src => src.TimeUnits * globalOptions.TimeUnitValue)
+                        .MapFrom(src => src.TimeUnits * 15)
                 )
                 .ForMember(
                     dest => dest.Price,
@@ -43,7 +43,7 @@ namespace OrgStructureMicroservice.Profiles
                 )
                 .ForMember(
                     dest => dest.TimeUnits,
-                    options => options.MapFrom(src => (int)(src.Price / globalOptions.TimeUnitValue))
+                    options => options.MapFrom(src => (int)(src.Price / 15))
                 );
         }
     }

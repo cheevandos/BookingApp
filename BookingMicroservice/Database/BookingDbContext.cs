@@ -7,6 +7,7 @@ namespace BookingMicroservice.Database
     {
         public DbSet<Booking>? Bookings { get; set; }
         public DbSet<BranchExternal>? Branches { get; set; }
+        public DbSet<CompanyExternal>? Companies { get; set; }
         public DbSet<EmployeeExternal>? Employees { get; set; }
         public DbSet<ServiceExternal>? Services { get; set; }
 

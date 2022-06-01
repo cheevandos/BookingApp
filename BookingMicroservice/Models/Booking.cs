@@ -8,7 +8,6 @@ namespace BookingMicroservice.Models
         [Key]
         [Required]
         public int Id { get; set; }
-        public int UserId { get; set; }
         [Required]
         public BookingStatus Status { get; set; }
         [Required]
@@ -17,6 +16,15 @@ namespace BookingMicroservice.Models
         public int TotalDuration { get; set; }
         [Required]
         public decimal TotalCost { get; set; }
+
+        public int UserId { get; set; }
+        public string? CustomerFirstName { get; set; }
+        public string? CustomerLastName { get; set; }
+        public string? CustomerPhone { get; set; }
+
+        [Required]
+        public int CompanyExternalId { get; set; }
+        public CompanyExternal? CompanyExternal { get; set; }
 
         [Required]
         public int BranchExternalId { get; set; }

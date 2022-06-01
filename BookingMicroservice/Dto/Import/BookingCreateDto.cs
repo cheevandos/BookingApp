@@ -8,6 +8,8 @@ namespace BookingMicroservice.Dto.Import
         [Required]
         public DateTime DateTime { get; set; }
         [Required]
+        public int CompanyId { get; set; }
+        [Required]
         public int BranchId { get; set; }
         [Required]
         public int EmployeeId { get; set; }

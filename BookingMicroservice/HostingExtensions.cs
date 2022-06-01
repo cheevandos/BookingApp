@@ -1,4 +1,6 @@
 ﻿using BookingMicroservice.Database;
+using BookingMicroservice.Repos;
+using BookingMicroservice.Repos.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
 
@@ -17,6 +19,11 @@ namespace BookingMicroservice
             {
                 options.UseInMemoryDatabase("OrgStructureDatabase");
             });
+
+            builder.Services.AddTransient<ICustomerBookingRepository, BookingRepository>();
+            builder.Services.AddTransient<IEmployeeBookingRepository, BookingRepository>();
+            builder.Services.AddTransient<IExternalImportRepository, ExternalRepository>();
+            builder.Services.AddTransient<IExternalUpdateRepository, ExternalRepository>();
 
             return builder.Build();
         }
